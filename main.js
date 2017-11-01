@@ -1,12 +1,18 @@
 
 const xlsx = require('xlsx');
 
-let workbook = xlsx.readFile('test.xlsx');
+let workbook = xlsx.readFile('test2.xlsx');
 
 let names = workbook.Workbook.Names;
 
+// xlsxのとき
 // [ { Name: 'itemA', Ref: 'Sheet1!$C$2' },
 //   { Name: 'listB', Ref: 'Sheet1!$B$5:$B$7' } ]
+
+// xlsのとき どうやってシートを特定するのだろう。
+// [ { Name: 'itemA', Ref: 'Sheet1!$C$2' },
+//   { Name: 'listB', Ref: '**MISSING**!$B$5:$B$7' } ]
+//
 
 for (let i=0; i<names.length; i++) {
 
